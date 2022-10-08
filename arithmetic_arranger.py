@@ -14,13 +14,13 @@ def arithmetic_arranger(problems, expect_solution = False):
         operator = problem.split(" ")[1].strip()
         lower_numbers = problem.split(' ')[2].strip()
 
-        if (upper_numbers.isdigit() or lower_numbers.isdigit()) == False:
+        if (upper_numbers.isdigit() is False) or (lower_numbers.isdigit() is False):
             return "Error: Numbers must only contain digits."
             
-        # if (operator != '+') or (operator != '-'):
-        #     return "Error: Operator must be '+' or '-'."
+        if (operator != '+') or (operator != '-'):
+            return "Error: Operator must be '+' or '-'."
         
         if ( len(upper_numbers) or len(lower_numbers) ) >= 5 :
             return "Error: Numbers cannot be more than four digits."
         
-print(arithmetic_arranger(["3q2 + 698", "3801 - 2", "45 + 43", "123 + 49"]))
+print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]))
